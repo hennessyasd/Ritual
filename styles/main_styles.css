@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+}
+
+img,
+picture,
+hr {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body .container {
+  background-color: #FAFAFA;
+}
+
+header nav {
+  font-family: "Birthstone";
+  font-size: calc(1rem + 1vmin);
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+header nav ul li {
+  width: calc(1rem + 7vmin);
+  height: auto;
+  border-radius: 30px;
+  background: #FFFFFF;
+  box-shadow: 1px 5px 35px rgb(25, 25, 25);
+  text-align: center;
+  list-style-type: none;
+  color: #1A1A1A;
+  cursor: pointer;
+}/*# sourceMappingURL=main_styles.css.map */

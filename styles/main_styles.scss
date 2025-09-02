@@ -1,0 +1,28 @@
+@import "_base";
+@import "_colors";
+
+body .container{
+    background-color: $primary-color;
+}
+
+header nav {
+    font-family: "Birthstone";
+    font-size: calc( 1rem + 1vmin);
+    width: 100%;
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            width: calc(1rem + 7vmin);
+            height: auto;
+            border-radius: 30px;
+            background: $card-color;
+            box-shadow: 1px 5px 35px rgb(25, 25, 25);
+            text-align: center;
+            list-style-type: none;
+            color: $main-font-color;
+            cursor: pointer;
+        }
+    }
+}
