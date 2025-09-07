@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -36,27 +37,113 @@ select {
   font: inherit;
 }
 
-body .container {
-  background-color: #FAFAFA;
-}
-
+/* базовое меню */
 header nav {
-  font-family: "Birthstone";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  font-family: "Birthstone", cursive;
   font-size: calc(1rem + 1vmin);
   width: 100%;
+  /* бургер */
+}
+header nav .logo img {
+  margin: 1rem;
+  max-width: 80px;
+  height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+header nav .burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+header nav .burger span {
+  display: block;
+  height: 4px;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+header nav .burger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+header nav .burger.active span:nth-child(2) {
+  opacity: 0;
+}
+header nav .burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
 }
 header nav ul {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 header nav ul li {
-  width: calc(1rem + 7vmin);
-  height: auto;
-  border-radius: 30px;
-  background: #FFFFFF;
-  box-shadow: 1px 5px 35px rgb(25, 25, 25);
-  text-align: center;
   list-style-type: none;
-  color: #1A1A1A;
+}
+header nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #555555;
+  box-shadow: 0px 5px 0px rgb(25, 25, 25);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+header nav ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- адаптив ---------- */
+/* мобильные и планшеты */
+@media (max-width: 768px) {
+  header nav .burger {
+    display: flex;
+    margin: 20px;
+  }
+  header nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #FAFAFA;
+    gap: 0;
+    display: none;
+  }
+  header nav ul li a {
+    font-size: 1.2rem;
+    padding: 1rem;
+    width: 100%;
+  }
+  header nav ul.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=main_styles.css.map */
