@@ -11,13 +11,16 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/styles/main_styles.css">
+    <link rel="shortcut icon" href="/img/icons/crest-icon.ico" type="image/x-icon">
     <title>Agency RIPual</title>
 </head>
 <body>
     <header>
       <nav>
         <div class="logo">
-          <img src="../img/icons/crest.png" alt="Company logo">
+          <a href="./index.html">
+            <img src="../img/icons/crest.png" alt="Company logo">
+          </a>
         </div>
 
         <!-- бургер -->
@@ -28,26 +31,56 @@
         </button>
 
         <ul>
-          <li><a href="#" class="main-page">Main</a></li>
-          <li><a href="#" class="cart-page">Cart</a></li>
-          <li><a href="#" class="catalog-page">Catalog</a></li>
-          <li><a href="#" class="checkout-page">Checkout</a></li>
-          <li><a href="#" class="product-page">Product</a></li>
-          <li><a href="#" class="profile-page">Profile</a></li>
+          <li><a href="./index.html" class="main-page">Main</a></li>
+          <li><a href="./cart.html" class="cart-page">Cart</a></li>
+          <li><a href="./catalog.html" class="catalog-page">Catalog</a></li>
+          <li><a href="./checkout.html" class="checkout-page">Checkout</a></li>
+          <li><a href="./product.html" class="product-page">Product</a></li>
+          <li><a href="./profile.html" class="profile-page">Profile</a></li>
         </ul>
       </nav>
     </header>
 
 
-    <hr class="fancy-line">
+    <hr class="fancy-hr">
 
-    <main>
-        <section></section>
-        <section></section>
-        <section></section>
+    <main id="main">
+        <article></article>
     </main>
-
-    <footer></footer>
-    <script src="/scripts/burger.js"></script>
+    <footer>
+      <section>
+        <div class="footer-name">Полезная информация</div>
+        <hr>
+        <address>
+        Контакты: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+        <a href="./catalog.html">Каталог товаров</a>
+        <a href="#">О нас</a>
+        <a href="#">Конфиденциальность</a>
+        <a href="#">МФЦ Минска</a>
+        <a href="#">Кладбища Минска</a>
+        <a href="#">Морги</a>
+        <a href="#">Свидетельство о смерти</a>
+        <p>© 2025 Agency RIP</p>
+      </section>
+      <section>
+        <div class="footer-name">Ритуальные товары</div>
+        <hr>
+        <a href="#">Гробы</a>
+        <a href="#">Ритуальные венки</a>
+        <a href="#">Кресты на могилу</a>
+        <a href="#">Текстиль</a>
+      </section>
+      <section>
+        <div>Ритуальные услуги</div>
+        <hr>
+        <a href="#">a</a>
+        <a href="#">b</a>
+        <a href="#">c</a>
+        <a href="#">d</a>
+      </section>
+      
+    </footer>
+    <script src="/scripts/scripts.js"></script>
 </body>
 </html>

@@ -37,7 +37,10 @@ select {
   font: inherit;
 }
 
-/* базовое меню */
+*, img {
+  outline: 0 !important;
+}
+
 header nav {
   display: flex;
   align-items: center;
@@ -45,9 +48,9 @@ header nav {
   flex-wrap: wrap;
   position: relative;
   font-family: "Birthstone", cursive;
-  font-size: calc(1rem + 1vmin);
+  font-size: clamp(1rem, 2.5vw, 2rem);
   width: 100%;
-  /* бургер */
+  /* ---------- бургер ---------- */
 }
 header nav .logo img {
   margin: 1rem;
@@ -75,6 +78,9 @@ header nav .burger span {
   background: #000;
   border-radius: 2px;
   transition: 0.3s;
+}
+header nav .burger.active {
+  height: 17px;
 }
 header nav .burger.active span:nth-child(1) {
   transform: rotate(45deg) translateY(9px);
@@ -110,9 +116,24 @@ header nav ul li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  background: #000;
+}
+footer section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+}
+footer section a {
+  color: #ffffff;
+}
+
 /* ---------- адаптив ---------- */
-/* мобильные и планшеты */
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   header nav .burger {
     display: flex;
     margin: 20px;
@@ -128,7 +149,7 @@ header nav ul li a:hover {
     display: none;
   }
   header nav ul li a {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 1rem;
     width: 100%;
   }
