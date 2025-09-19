@@ -19,7 +19,6 @@ body {
   max-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
 }
 
 img,
@@ -41,18 +40,21 @@ select {
   outline: 0 !important;
 }
 
-header nav {
+/*header*/
+#header nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   position: relative;
-  font-family: "Birthstone", cursive;
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-family: "Great Vibes", cursive;
+  font-optical-sizing: auto;
+  font-weight: 257;
+  font-size: clamp(1rem, 1.5vw, 2rem);
   width: 100%;
   /* ---------- бургер ---------- */
 }
-header nav .logo img {
+#header nav .logo img {
   margin: 1rem;
   max-width: 80px;
   height: auto;
@@ -60,7 +62,7 @@ header nav .logo img {
      -moz-user-select: none;
           user-select: none;
 }
-header nav .burger {
+#header nav .burger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -72,26 +74,26 @@ header nav .burger {
   padding: 0;
   z-index: 1001;
 }
-header nav .burger span {
+#header nav .burger span {
   display: block;
   height: 4px;
   background: #000;
   border-radius: 2px;
   transition: 0.3s;
 }
-header nav .burger.active {
+#header nav .burger.active {
   height: 17px;
 }
-header nav .burger.active span:nth-child(1) {
+#header nav .burger.active span:nth-child(1) {
   transform: rotate(45deg) translateY(9px);
 }
-header nav .burger.active span:nth-child(2) {
+#header nav .burger.active span:nth-child(2) {
   opacity: 0;
 }
-header nav .burger.active span:nth-child(3) {
+#header nav .burger.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-9px);
 }
-header nav ul {
+#header nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -99,10 +101,10 @@ header nav ul {
   margin: 0;
   padding: 0;
 }
-header nav ul li {
+#header nav ul li {
   list-style-type: none;
 }
-header nav ul li a {
+#header nav ul li a {
   display: block;
   padding: 0.5rem 1rem;
   text-align: center;
@@ -112,33 +114,64 @@ header nav ul li a {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-header nav ul li a:hover {
+#header nav ul li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
+/*main*/
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+/*footer*/
+#footer {
   background: #000;
-}
-footer section {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 20px;
   color: #ffffff;
 }
-footer section a {
+#footer .footer-container {
+  width: 90%;
+  margin: auto;
+}
+#footer .footer-container .footer-accordion section {
+  border-bottom: 1px solid #444;
+}
+#footer .footer-container .footer-accordion section .accordion-header {
+  width: 100%;
+  text-align: left;
+  background: #000;
   color: #ffffff;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#footer .footer-container .footer-accordion section .accordion-header.active {
+  background: #333;
+  color: #fff;
+}
+#footer .footer-container .footer-accordion section .accordion-content a {
+  display: block;
+  padding: 10px 15px;
+  background: #000;
+  color: #ffffff;
+  text-decoration: none;
+}
+#footer .footer-container .footer-accordion section .accordion-content a:hover {
+  background: #555555;
+}
+#footer .footer-container .footer-under-container {
+  padding: 20px;
 }
 
 /* ---------- адаптив ---------- */
+/*header*/
 @media screen and (max-width: 1024px) {
-  header nav .burger {
+  #header nav .burger {
     display: flex;
     margin: 20px;
   }
-  header nav ul {
+  #header nav ul {
     position: absolute;
     top: 100%;
     left: 0;
@@ -148,16 +181,55 @@ footer section a {
     gap: 0;
     display: none;
   }
-  header nav ul li a {
+  #header nav ul li a {
     font-size: 1.6rem;
     padding: 1rem;
     width: 100%;
   }
-  header nav ul.active {
+  #header nav ul.active {
     display: flex;
     animation: slideDown 0.3s ease;
   }
 }
+/*main*/
+/*footer*/
+@media screen and (max-width: 1023px) {
+  #footer {
+    width: 100%;
+    background: #000;
+    color: #ffffff;
+  }
+  #footer .footer-accordion section .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #111;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer-accordion {
+    display: flex;
+  }
+  .footer-accordion section {
+    flex: 1;
+  }
+  .footer-accordion section .accordion-header {
+    cursor: pointer;
+  }
+  .footer-accordion section .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #111;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 15px;
+  }
+  .footer-accordion section .accordion-header.active + .accordion-content {
+    max-height: 500px;
+    padding: 15px;
+  }
+}
+/*keyframes*/
 @keyframes slideDown {
   from {
     opacity: 0;

@@ -9,13 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@257&display=swap" rel="stylesheet">
     <!-- styles -->
     <link rel="stylesheet" href="/styles/main_styles.css">
     <link rel="shortcut icon" href="/img/icons/crest-icon.ico" type="image/x-icon">
     <title>Agency RIPual</title>
 </head>
 <body>
-    <header>
+    <header id="header">
       <nav>
         <div class="logo">
           <a href="./index.html">
@@ -31,12 +34,11 @@
         </button>
 
         <ul>
-          <li><a href="./index.html" class="main-page">Main</a></li>
-          <li><a href="./cart.html" class="cart-page">Cart</a></li>
-          <li><a href="./catalog.html" class="catalog-page">Catalog</a></li>
-          <li><a href="./checkout.html" class="checkout-page">Checkout</a></li>
-          <li><a href="./product.html" class="product-page">Product</a></li>
-          <li><a href="./profile.html" class="profile-page">Profile</a></li>
+          <li><a href="./index.html" class="main-page">Главная</a></li>
+          <li><a href="./catalog.html" class="catalog-page">Каталог</a></li>
+          <li><a href="./product.html" class="product-page">Товар</a></li>
+          <li><a href="./cart.html" class="cart-page">Корзина</a></li>
+          <li><a href="./profile.html" class="profile-page">Профиль</a></li>
         </ul>
       </nav>
     </header>
@@ -47,39 +49,55 @@
     <main id="main">
         <article></article>
     </main>
-    <footer>
-      <section>
-        <div class="footer-name">Полезная информация</div>
-        <hr>
-        <address>
-        Контакты: <a href="mailto:info@example.com">info@example.com</a>
-        </address>
-        <a href="./catalog.html">Каталог товаров</a>
-        <a href="#">О нас</a>
-        <a href="#">Конфиденциальность</a>
-        <a href="#">МФЦ Минска</a>
-        <a href="#">Кладбища Минска</a>
-        <a href="#">Морги</a>
-        <a href="#">Свидетельство о смерти</a>
-        <p>© 2025 Agency RIP</p>
-      </section>
-      <section>
-        <div class="footer-name">Ритуальные товары</div>
-        <hr>
-        <a href="#">Гробы</a>
-        <a href="#">Ритуальные венки</a>
-        <a href="#">Кресты на могилу</a>
-        <a href="#">Текстиль</a>
-      </section>
-      <section>
-        <div>Ритуальные услуги</div>
-        <hr>
-        <a href="#">a</a>
-        <a href="#">b</a>
-        <a href="#">c</a>
-        <a href="#">d</a>
-      </section>
-      
+    <footer id="footer">
+      <div class="footer-container">
+      <div class="footer-accordion">
+        <section>
+          <button class="accordion-header">Ритуальные услуги</button>
+          <div class="accordion-content">
+            <a href="#">Вызов ритуального агента</a>
+            <a href="#">Организация похорон в Минске</a>
+            <a href="#">Организация похорон в МО</a>
+            <a href="#">Кремация</a>
+            <a href="#">Груз 200</a>
+            <a href="#">Место на кладбище</a>
+            <a href="#">VIP-похороны</a>
+            <a href="#">Страхование</a>
+            <a href="#">Поминальная трапеза</a>
+          </div>
+        </section>
+        <section>
+          <button class="accordion-header">Ритуальные товары</button>
+          <div class="accordion-content">
+            <a href="#">Гробы</a>
+            <a href="#">Ритуальные венки</a>
+            <a href="#">Кресты на могилу</a>
+            <a href="#">Текстиль</a>
+          </div>
+        </section>
+        <section>
+          <button class="accordion-header">Полезная информация</button>
+          <div class="accordion-content">
+            <a href="#">О нас</a>
+            <a href="#">Каталог товаров</a>
+            <a href="#">Конфиденциальность</a>
+            <a href="#">МФЦ Минска</a>
+            <a href="#">Кладбища Минска</a>
+            <a href="#">Морги</a>
+            <a href="#">Свидетельство о смерти</a>
+          </div>
+        </section>
+      </div>
+      <hr>
+      <div class="footer-under-container">
+        На сайте представлена справочная информация о работе государственных и муниципальных служб и организаций.
+        <br>
+        Служба RitualRIP является отдельным хозяйствующим субъектом и не участвует в их работе, а также в работе ГБУ "Ритуал".
+        <br>
+        <p>© 2025 г. ООО "Ритуал.бай"</p>
+        Любое использование либо копирование материалов или подборки материалов сайта, элементов дизайна и оформления допускается лишь с разрешения правообладателя и только со ссылкой на источник.
+      </div>
+      </div>
     </footer>
     <script src="/scripts/scripts.js"></script>
 </body>

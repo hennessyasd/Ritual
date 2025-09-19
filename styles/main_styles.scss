@@ -1,14 +1,18 @@
 @import "_base";
 @import "_colors";
 
-header nav {
+/*header*/
+#header nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   position: relative;
-  font-family: "Birthstone", cursive;
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-family: "Great Vibes", cursive;
+  // font-family: "Birthstone", cursive;
+  font-optical-sizing: auto;
+  font-weight: 257;
+  font-size: clamp(1rem, 1.5vw, 2rem);
   width: 100%;
 
   .logo img {
@@ -82,26 +86,68 @@ header nav {
     }
   }
 }
+/*main*/
+body {
+  font-family: "Oswald", sans-serif;
+}
 
-footer {
-  display: flex;
-  justify-content: space-between;
+/*footer*/
+#footer {
   background: $black-color;
-  section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 20px;
-    color: $white-color;
-    a {
-      color: $white-color;
-    }
+  color: $white-color;
+
+  .footer-container {
+    width: 90%;
+    margin: auto;
+
+      .footer-accordion {
+        section {
+          border-bottom: 1px solid #444;
+        
+          .accordion-header {
+            width: 100%;
+            text-align: left;
+            background: $black-color;
+            color: $white-color;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          
+            &.active {
+              background: #333;
+              color: #fff;
+            }
+          }
+        
+          .accordion-content {
+            a {
+              display: block;
+              padding: 10px 15px;
+              background: $black-color;
+              color: $white-color;
+              text-decoration: none;
+            
+              &:hover {
+                background: $semi-color-font;
+              }
+            }
+          }
   }
 }
 
+.footer-under-container {
+    padding: 20px;
+  }
+  }
+}
+
+
 /* ---------- адаптив ---------- */
+/*header*/
 @media screen and (max-width: 1024px) {
-  header nav {
+  #header nav {
     .burger {
       display: flex;
       margin: 20px;
@@ -131,6 +177,57 @@ footer {
   }
 }
 
+/*main*/
+
+/*footer*/
+@media screen and (max-width: 1023px) {
+  #footer {
+    width: 100%;
+    background: $black-color;
+    color: $white-color;
+
+    .footer-accordion {
+    section {
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #111;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 15px;
+      }
+    }
+  }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer-accordion {
+    display: flex;
+
+    section {
+      flex: 1;
+
+      .accordion-header {
+        cursor: pointer;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #111;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 15px;
+      }
+
+      .accordion-header.active + .accordion-content {
+        max-height: 500px;
+        padding: 15px;
+      }
+    }
+  }
+}
+
+
+/*keyframes*/
 @keyframes slideDown {
   from {
     opacity: 0;
