@@ -1,0 +1,121 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Oswald", sans-serif;
+}
+
+img,
+picture,
+hr {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+*, img {
+  outline: 0 !important;
+}
+
+/*footer*/
+#footer {
+  background: #000;
+  color: #ffffff;
+}
+#footer .footer-container {
+  width: 90%;
+  margin: auto;
+}
+#footer .footer-container .footer-accordion section {
+  border-bottom: 1px solid #444;
+}
+#footer .footer-container .footer-accordion section .accordion-header {
+  width: 100%;
+  text-align: left;
+  background: #000;
+  color: #ffffff;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#footer .footer-container .footer-accordion section .accordion-header.active {
+  background: #333;
+  color: #fff;
+}
+#footer .footer-container .footer-accordion section .accordion-content a {
+  display: block;
+  padding: 10px 15px;
+  background: #000;
+  color: #ffffff;
+  text-decoration: none;
+}
+#footer .footer-container .footer-accordion section .accordion-content a:hover {
+  background: #555555;
+}
+#footer .footer-container .footer-under-container {
+  padding: 20px;
+}
+
+/*адаптив*/
+@media screen and (max-width: 1023px) {
+  #footer {
+    width: 100%;
+    background: #000;
+    color: #ffffff;
+  }
+  #footer .footer-accordion section .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #111;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer-accordion {
+    display: flex;
+  }
+  .footer-accordion section {
+    flex: 1;
+  }
+  .footer-accordion section .accordion-header {
+    cursor: pointer;
+  }
+  .footer-accordion section .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #111;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 15px;
+  }
+  .footer-accordion section .accordion-header.active + .accordion-content {
+    max-height: 500px;
+    padding: 0;
+  }
+}/*# sourceMappingURL=footer.css.map */

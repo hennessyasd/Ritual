@@ -1,3 +1,4 @@
+//burger-menu
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector(".burger");
   const navMenu = document.querySelector("header nav ul");
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-
+//accordion
 document.addEventListener("DOMContentLoaded", () => {
   const accordions = document.querySelectorAll(".accordion-header");
   const footer = document.querySelector("footer");
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           other.classList.remove("active");
           const otherContent = other.nextElementSibling;
           otherContent.style.maxHeight = null;
-          otherContent.style.padding = "0 15px";
+          
         }
       });
 
@@ -33,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
-        content.style.padding = "0 15px";
+        
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
-        content.style.padding = "15px";
+        
       }
     });
   });
@@ -51,4 +52,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+});
+
+
+//slider main
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slider .slide");
+  let currentIndex = 0;
+  const interval = 5000;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  showSlide(currentIndex);
+  setInterval(nextSlide, interval);
 });
