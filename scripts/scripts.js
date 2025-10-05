@@ -99,3 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(block);
   });
 });
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("hide");
+    setTimeout(() => {
+      preloader.remove();
+    }, 1000);
+  }, 3000);
+});
