@@ -219,7 +219,7 @@ select {
   background-color: #000;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  background: url("/img/icons/svgs/moon-dark-theme.svg") no-repeat center/50%;
+  background: url("../img/icons/svgs/moon-dark-theme.svg") no-repeat center/50%;
 }
 #header nav .circle-theme svg {
   width: 24px;
