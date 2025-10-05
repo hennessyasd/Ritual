@@ -241,6 +241,29 @@
       </div>
       </div>
     </footer>
+    <div class="popup-form">
+      <form id="requestForm" class="popup-content">
+        <button type="button" class="close-btn">&times;</button>
+        <h3>Оставить заявку</h3>
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Ваш телефон" required>
+        <input type="email" name="email" placeholder="Ваш e-mail" required>
+        <textarea name="message" placeholder="Ваше сообщение"></textarea>
+        <div class="contact-info">
+          <p>Свяжитесь с нами!</p>
+          <p>📞 +375 12 345 67 89</p>
+          <p>📍 г. Минск, ул. Диванная, 52Б</p>
+          <p>✉️ example@mail.ru</p>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+
+    <div class="notification">
+      <span class="notif-text">Заявка успешно отправлена!</span>
+      <div class="notif-line"></div>
+    </div>
+    <script src="/scripts/form.js"></script>
     <script src="/scripts/scripts.js"></script>
 </body>
 </html>
