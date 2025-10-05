@@ -40,7 +40,10 @@
 
     .bg-katalog {
       position: relative;
-      background-image: url("bg.jpeg") center/cover no-repeat;
+      background-image: url("../img/icons/bg/bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       min-height: 90vh;
       width: 100%;
       display: flex;
@@ -276,6 +279,7 @@
         margin: 35px auto;
         box-shadow: 0px 8px 20px 1px rgb(117 115 115);
         transition: background-color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
 
           &:hover {
             background-color: rgb(61, 61, 61);

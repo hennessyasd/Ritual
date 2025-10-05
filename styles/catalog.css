@@ -689,39 +689,39 @@ select {
 }
 #main .first-container .div1 {
   grid-area: 1/1/2/2;
-  background-image: url(img/icons/bg/cards/agent.jpg);
+  background-image: url(../img/icons/bg/cards/agent.jpg);
 }
 #main .first-container .div2 {
   grid-area: 1/2/2/3;
-  background-image: url(img/icons/bg/cards/death.jpg);
+  background-image: url(../img/icons/bg/cards/death.jpg);
 }
 #main .first-container .div3 {
   grid-area: 1/3/2/4;
-  background-image: url(img/icons/bg/cards/death-mo.jpg);
+  background-image: url(../img/icons/bg/cards/death-mo.jpg);
 }
 #main .first-container .div4 {
   grid-area: 2/1/3/2;
-  background-image: url(img/icons/bg/cards/urna.jpg);
+  background-image: url(../img/icons/bg/cards/urna.jpg);
 }
 #main .first-container .div5 {
   grid-area: 2/2/3/3;
-  background-image: url(img/icons/bg/cards/katafalk.jpg);
+  background-image: url(../img/icons/bg/cards/katafalk.jpg);
 }
 #main .first-container .div6 {
   grid-area: 2/3/3/4;
-  background-image: url(img/icons/bg/cards/place.jpg);
+  background-image: url(../img/icons/bg/cards/place.jpg);
 }
 #main .first-container .div7 {
   grid-area: 3/1/4/2;
-  background-image: url(img/icons/bg/cards/vip.jpg);
+  background-image: url(../img/icons/bg/cards/vip.jpg);
 }
 #main .first-container .div8 {
   grid-area: 3/2/4/3;
-  background-image: url(img/icons/bg/cards/save.jpeg);
+  background-image: url(../img/icons/bg/cards/save.jpeg);
 }
 #main .first-container .div9 {
   grid-area: 3/3/4/4;
-  background-image: url(img/icons/bg/cards/food.jpg);
+  background-image: url(../img/icons/bg/cards/food.jpg);
 }
 #main .second-container {
   width: 90%;
@@ -826,6 +826,7 @@ select {
   margin: 35px auto;
   box-shadow: 0px 8px 20px 1px rgb(117, 115, 115);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 #main .third-container .btn:hover {
   background-color: rgb(61, 61, 61);
