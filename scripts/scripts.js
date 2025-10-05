@@ -75,3 +75,27 @@ document.addEventListener("DOMContentLoaded", () => {
   showSlide(currentIndex);
   setInterval(nextSlide, interval);
 });
+
+//animate
+
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedBlocks = document.querySelectorAll(
+    ".bg-katalog, .first-container, .second-container, .third-container"
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2,
+  });
+
+  animatedBlocks.forEach((block) => {
+    block.classList.add("scroll-animate");
+    observer.observe(block);
+  });
+});

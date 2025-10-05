@@ -2,6 +2,7 @@
 @import "_colors";
 @import "footer";
 @import "header";
+@import "animate";
 
 /*main*/
 #main{
@@ -252,7 +253,7 @@
         }
       }
 
-    .third-container{
+    .third-container {
       font-size: 1.4rem;
 
       h3 {
@@ -306,11 +307,8 @@
 
 @media screen and (max-width: 1024px) {
   #main {
+    
     .main-container {
-
-      .first-container {
-        
-      }
 
         .bg-katalog .content {
           .title {

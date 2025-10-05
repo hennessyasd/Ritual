@@ -121,7 +121,7 @@ select {
   background: #555555;
 }
 #footer .footer-container .footer-under-container {
-  padding: 20px;
+  padding: 20px 20px 80px 20px;
 }
 
 /*адаптив*/
@@ -225,10 +225,22 @@ select {
   width: 100%;
   /* ---------- бургер ---------- */
 }
+#header nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #header nav .logo img {
   margin: 1rem;
   max-width: 80px;
   height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#header nav .logo > span {
+  font-size: 3rem;
+  padding-left: 30px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -351,6 +363,17 @@ select {
     animation: slideDown 0.3s ease;
   }
 }
+@media (max-width: 361px) {
+  #header nav .logo > span {
+    padding: 0;
+  }
+}
+@media (max-width: 287px) {
+  #header nav .logo > span {
+    padding: 0;
+    font-size: 1rem;
+  }
+}
 /*keyframes*/
 @keyframes slideDown {
   from {
@@ -362,6 +385,17 @@ select {
     transform: translateY(0);
   }
 }
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*main*/
 #main .main-container {
   margin: auto;

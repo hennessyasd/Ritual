@@ -385,26 +385,55 @@ select {
     padding: 0;
   }
 }
-#main .main-title {
+.floating-cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.floating-cart:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+.floating-cart span {
+  margin-left: 8px;
+  font-size: 1rem;
+  background: #555555;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.catalog-container {
+  padding: 2rem;
+}
+.catalog-container .catalog-title {
   text-align: center;
-  margin: 7rem 0 3rem 0;
-}
-#main .main-title h1 {
   font-size: 2.5rem;
+  margin: 7rem 0 3rem 0;
+  color: #555555;
 }
-#main .divider {
+.catalog-container .divider {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
 }
-#main .divider .line {
+.catalog-container .divider .line {
   flex: 1;
   height: 1px;
   background: #555555;
   margin: 0 15px;
 }
-#main .divider .cross {
+.catalog-container .divider .cross {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -412,189 +441,109 @@ select {
   color: #555555;
   font-family: "Times New Roman", serif;
 }
-#main .first-container {
-  width: 90%;
-  margin: auto;
-}
-#main .first-container .parent {
+.catalog-container .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 0.2fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  justify-items: center;
 }
-#main .first-container .card {
+.catalog-container .products-grid .product-card {
   position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 4/3;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  min-height: 500px;
-  width: auto;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-size: cover;
   background-position: center;
-  box-shadow: 0px 2px 12px 0px #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-#main .first-container .card::before {
+.catalog-container .products-grid .product-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.45);
+  transition: background 0.3s ease;
 }
-#main .first-container .card:hover {
-  transition: 0.25s cubic-bezier(0.13, 0.51, 0.58, 1) !important;
-  transition-property: transform !important;
-  transform: scale3d(1.1, 1.1, 1.1);
-  z-index: 10;
-}
-#main .first-container .card:hover::before {
-  background: rgba(0, 0, 0, 0.25);
-}
-#main .first-container .card a {
+.catalog-container .products-grid .product-card a {
   position: relative;
   z-index: 2;
-  padding: 20px;
-  font-size: 1.6rem;
-  font-weight: 600;
+  padding: 16px;
   color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
   text-decoration: none;
+  transition: opacity 0.3s ease;
 }
-#main .first-container .div1 {
-  grid-area: 1/1/2/2;
-  background-image: url(/img/icons/bg/cards/agent.jpg);
+.catalog-container .products-grid .product-card > p {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
-#main .first-container .div2 {
-  grid-area: 1/2/2/3;
-  background-image: url(/img/icons/bg/cards/death.jpg);
-}
-#main .first-container .div3 {
-  grid-area: 1/3/2/4;
-  background-image: url(/img/icons/bg/cards/death-mo.jpg);
-}
-#main .first-container .div4 {
-  grid-area: 2/1/3/2;
-  background-image: url(/img/icons/bg/cards/urna.jpg);
-}
-#main .first-container .div5 {
-  grid-area: 2/2/3/3;
-  background-image: url(/img/icons/bg/cards/katafalk.jpg);
-}
-#main .first-container .div6 {
-  grid-area: 2/3/3/4;
-  background-image: url(/img/icons/bg/cards/place.jpg);
-}
-#main .first-container .div7 {
-  grid-area: 3/1/4/2;
-  background-image: url(/img/icons/bg/cards/vip.jpg);
-}
-#main .first-container .div8 {
-  grid-area: 3/2/4/3;
-  background-image: url(/img/icons/bg/cards/save.jpeg);
-}
-#main .first-container .div9 {
-  grid-area: 3/3/4/4;
-  background-image: url(/img/icons/bg/cards/food.jpg);
-}
-#main .second-container {
-  width: 90%;
-  margin: auto;
-}
-#main .second-container .parent {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  text-align: center;
-  justify-content: center;
-}
-#main .second-container .parent .card {
+.catalog-container .products-grid .product-card .add-to-cart {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  border: 1px solid #000;
-  border-radius: 10px;
-  background-color: #f8f8f8;
+  justify-content: center;
+  transition: top 0.4s ease;
+  z-index: 3;
 }
-#main .second-container .parent .card:hover {
-  border: 0px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
-  transition: all 0.18s;
-}
-#main .second-container .parent .card h2, #main .second-container .parent .card span {
-  margin-top: 15px;
-  color: #8799A3;
-  font-family: "Montserrat", Sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-}
-#main .second-container .parent .card span {
-  color: #000;
-  font-weight: 800;
-}
-#main .second-container .parent .card .card-btn {
+.catalog-container .products-grid .product-card .add-to-cart .add-btn {
   text-decoration: none;
   color: #ffffff;
-  background-color: #8799A3;
-  border-radius: 100px 100px 100px 100px;
+  background-color: #555555;
+  border-radius: 10px;
   margin: 25px 0 0 0;
-  padding: 15px 40px 15px 40px;
+  padding: 10px 25px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
   font-family: "Montserrat", Sans-serif;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-#main .second-container .parent .card .card-btn:hover {
-  background-color: #555555;
-  transition: all 0.3s;
+.catalog-container .products-grid .product-card .add-to-cart .add-btn:hover {
+  background-color: #73858e;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
 }
-#main .second-container .parent .card ul {
-  font-family: "Montserrat", Sans-serif;
-  font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 1.5em;
+.catalog-container .products-grid .product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
-#main .second-container .parent .card ul li {
-  margin: 5px 15px 5px 15px;
-  -webkit-text-decoration: 1px underline;
-          text-decoration: 1px underline;
-  text-decoration-color: #9d9d9d;
-  padding: 15px;
+.catalog-container .products-grid .product-card:hover::before {
+  background: rgba(0, 0, 0, 0.25);
 }
-#main .second-container .div1 {
-  grid-area: 1/1/2/2;
+.catalog-container .products-grid .product-card:hover .add-to-cart {
+  top: 0;
 }
-#main .second-container .div2 {
-  grid-area: 1/2/2/3;
-}
-#main .second-container .div3 {
-  grid-area: 1/3/2/4;
-}
-#main .second-container .div4 {
-  grid-area: 1/4/2/5;
-}
-#main .third-container {
-  margin-top: 2rem;
+.catalog-container .second-container {
   font-size: 1.4rem;
-  width: 90%;
-  margin: auto;
 }
-#main .third-container h3 {
+.catalog-container .second-container h3 {
   text-align: center;
 }
-#main .third-container p {
+.catalog-container .second-container p {
   margin: 10px;
 }
-#main .third-container .btn {
+.catalog-container .second-container .btn {
   padding: 8px 20px;
   background: #000;
   color: #fff;
@@ -606,46 +555,149 @@ select {
   box-shadow: 0px 8px 20px 1px rgb(117, 115, 115);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-#main .third-container .btn:hover {
+.catalog-container .second-container .btn:hover {
   background-color: rgb(61, 61, 61);
   transform: scale(1.05);
 }
-#main .third-container .btn:active {
+.catalog-container .second-container .btn:active {
   transform: scale(0.98);
 }
-#main .third-container .list .text {
+.catalog-container .second-container .list .text {
   list-style-type: decimal;
   margin-left: 27px;
   font-size: 1.4rem;
 }
-#main .third-container .list .text strong {
+.catalog-container .second-container .list .text strong {
   margin: 10px;
 }
 
-/*адаптив*/
-@media screen and (max-width: 1023px) {
-  #main .main-title {
-    text-align: center;
-    margin: 7rem 0 3rem 0;
+/*Cart side bar*/
+.cart-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -1000px;
+  width: 350px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s ease;
+  z-index: 1000;
+  padding: 1rem;
+}
+.cart-sidebar .cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+}
+.cart-sidebar .cart-header h2 {
+  font-size: 1.5rem;
+}
+.cart-sidebar .cart-header button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.cart-sidebar .cart-items {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+.cart-sidebar .cart-items .empty {
+  text-align: center;
+  color: #666;
+}
+.cart-sidebar .cart-items .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+.cart-sidebar .cart-items .cart-item .item-info {
+  flex: 1;
+}
+.cart-sidebar .cart-items .cart-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 2rem;
+}
+.cart-sidebar .cart-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cart-sidebar .cart-footer .checkout-btn {
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  background: #333;
+  color: #fff;
+}
+.cart-sidebar .cart-footer .checkout-btn:hover {
+  transition: all 0.3s;
+  box-shadow: 0px 8px 20px 1px rgb(20, 10, 10);
+}
+.cart-sidebar .cart-footer .to-cart-btn {
+  background: #eee;
+}
+.cart-sidebar .cart-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.cart-sidebar.active {
+  right: 0;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+}
+
+.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* адаптив */
+@media (max-width: 768px) {
+  .catalog-container .catalog-title {
+    font-size: 2rem;
   }
-  #main .first-container {
-    width: 90%;
-    margin: auto;
+  .catalog-container .product-card {
+    max-width: 100%;
   }
-  #main .first-container .parent {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  .catalog-container .product-card a {
+    font-size: 1rem;
   }
-  #main .first-container .parent .div1, #main .first-container .parent .div2, #main .first-container .parent .div3, #main .first-container .parent .div4, #main .first-container .parent .div5, #main .first-container .parent .div6, #main .first-container .parent .div7, #main .first-container .parent .div8, #main .first-container .parent .div9 {
-    grid-row: auto;
-    grid-column: auto;
+  .catalog-container .product-card .add-btn {
+    padding: 12px 28px;
+    font-size: 13px;
   }
-  #main .second-container .parent {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  #main .second-container .parent .div1, #main .second-container .parent .div2, #main .second-container .parent .div3, #main .second-container .parent .div4 {
-    grid-row: auto;
-    grid-column: auto;
-  }
-}/*# sourceMappingURL=catalog.css.map */
+}/*# sourceMappingURL=product.css.map */

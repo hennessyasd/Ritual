@@ -17,17 +17,27 @@
     flex-wrap: wrap;
     position: relative;
     font-family: "Great Vibes", cursive;
-    // font-family: "Birthstone", cursive;
     font-optical-sizing: auto;
     font-weight: 257;
     font-size: clamp(1rem, 1.5vw, 2rem);
     width: 100%;
 
-    .logo img {
-      margin: 1rem;
-      max-width: 80px;
-      height: auto;
-      user-select: none;
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        margin: 1rem;
+        max-width: 80px;
+        height: auto;
+        user-select: none;
+      }
+
+      >span {
+        font-size: 3rem;
+        padding-left: 30px;
+        user-select: none;
+      }
     }
 
     /* ---------- бургер ---------- */
@@ -171,6 +181,27 @@
       }
     }
   }
+}
+
+@media (max-width: 361px) {
+  #header {
+
+    nav{
+
+      .logo {
+        >span {
+          padding: 0;
+        }
+      }
+    } 
+  }
+}
+
+@media (max-width: 287px) {
+    #header nav .logo > span {
+        padding: 0;
+        font-size: 1rem;
+    }
 }
 
 /*keyframes*/
