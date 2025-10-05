@@ -63,10 +63,22 @@ select {
   width: 100%;
   /* ---------- бургер ---------- */
 }
+#header nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #header nav .logo img {
   margin: 1rem;
   max-width: 80px;
   height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#header nav .logo > span {
+  font-size: 3rem;
+  padding-left: 30px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -187,6 +199,17 @@ select {
   #header nav ul.active {
     display: flex;
     animation: slideDown 0.3s ease;
+  }
+}
+@media (max-width: 361px) {
+  #header nav .logo > span {
+    padding: 0;
+  }
+}
+@media (max-width: 287px) {
+  #header nav .logo > span {
+    padding: 0;
+    font-size: 1rem;
   }
 }
 /*keyframes*/

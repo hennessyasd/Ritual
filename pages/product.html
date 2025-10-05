@@ -13,44 +13,207 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@257&display=swap" rel="stylesheet">
     <!-- styles -->
-    
+    <link rel="stylesheet" href="/styles/product.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="shortcut icon" href="/img/icons/icons/crest-icon.ico" type="image/x-icon">
-    <title>Agency RIPual</title>
+    <title>Product | RIPual</title>
 </head>
 <body>
-    <header id="header">
-      <nav>
-        <div class="logo">
+  <header id="header">
+    <nav>
+      <div class="logo">
           <a href="./index.html">
             <img src="../img/icons/icons/crest.png" alt="Company logo">
           </a>
+          <span>RIPual</span>
         </div>
+      <!-- бургер -->
+      <button class="burger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul>
+        <li><a href="./index.html" class="main-page">Главная</a></li>
+        <li><a href="./catalog.html" class="catalog-page">Каталог</a></li>
+        <li><a href="./product.html" class="product-page">Товары</a></li>
+        <div class="circle-theme"></div>
+      </ul>
+    </nav>
+  </header>
+  <div class="floating-cart" id="cart-icon">
+    🛒 <span id="cart-count">0</span>
+  </div>
 
-        <!-- бургер -->
-        <button class="burger" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <ul>
-          <li><a href="./index.html" class="main-page">Главная</a></li>
-          <li><a href="./catalog.html" class="catalog-page">Каталог</a></li>
-          <li><a href="./product.html" class="product-page">Товар</a></li>
-          <li><a href="./cart.html" class="cart-page">Корзина</a></li>
-          <li><a href="./profile.html" class="profile-page">Профиль</a></li>
-          <div class="circle-theme"></div>
-        </ul>
-      </nav>
-    </header>
-
-
-    <hr class="fancy-hr">
-
+  <div class="cart-sidebar scroll-animate" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Корзина</h2>
+      <button id="close-cart">&times;</button>
+    </div>
+  
+    <div class="cart-items" id="cart-items">
+      <p class="empty">В корзине пусто</p>
+    </div>
+  
+    <div class="cart-footer">
+      <div class="cart-total">
+        Итого: <span id="cart-total">0 BYN</span>
+      </div>
+      <button class="checkout-btn">Оформить заказ</button>
+    </div>
+  </div>
+<div class="cart-overlay" id="cart-overlay"></div>
     <main id="main">
-        <article>product</article>
+      <div class="catalog-container">
+        <h2 class="catalog-title">Ритуальные товары</h2>
+        <div class="divider">
+          <span class="line"></span>
+          <span class="cross">☦</span>
+          <span class="line"></span>
+        </div>
+        <article class="products-grid">
+          <div class="product-card" style="background-image: url('/img/icons/product/red\ coffin.jpg')" data-price="340">
+            <a href="#">Гроб красный</a>
+            <p>340 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/blue\ coffin.jpg')" data-price="340">
+            <a href="#">Гроб синий</a>
+            <p>340 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/white\ coffin.jpg')" data-price="360">
+            <a href="#">Гроб белый</a>
+            <p>360 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/black\ coffin.jpg')" data-price="380">
+            <a href="#">Гроб черный</a>
+            <p>380 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/pink\ coffin.jpg')" data-price="340">
+            <a href="#">Гроб розовый</a>
+            <p>340 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/venok_1.jpg')" data-price="90">
+            <a href="#">Ритуальный венок розы</a>
+            <p>90 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+            <div class="product-card" style="background-image: url('/img/icons/product/venok_gortenzii.jpeg')" data-price="150">
+            <a href="#">Ритуальный венок гортензии</a>
+            <p>150 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/venok_2.jpg')" data-price="120">
+            <a href="#">Ритуальный венок</a>
+            <p>120 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/venok_3.jpg')" data-price="120">
+            <a href="#">Ритуальный венок</a>
+            <p>120 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/cross1.jpg')" data-price="220">
+            <a href="#">Крест на могилу</a>
+            <p>220 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/cross2.jpg')" data-price="220">
+            <a href="#">Крест на могилу</a>
+            <p>220 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/cross3.jpg')" data-price="220">
+            <a href="#">Крест на могилу</a>
+            <p>220 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/cross4.jpg')" data-price="200">
+            <a href="#">Крест на могилу</a>
+            <p>200 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/textile.jpg')" data-price="240">
+            <a href="#">Ритуальный текстиль премиум</a>
+            <p>240 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/textile2.jpg')" data-price="180">
+            <a href="#">Ритуальный текстиль стандарт </a>
+            <p>180 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+          <div class="product-card" style="background-image: url('/img/icons/product/textile3.jpg')" data-price="110">
+            <a href="#">Ритуальный текстиль эконом</a>
+            <p>110 BYN</p>
+          <div class="add-to-cart">
+            <button type="button" class="add-btn">Добавить в корзину</button>
+          </div>
+          </div>
+        </article>
+        <div class="divider">
+          <span class="line"></span>
+          <span class="cross">☦</span>
+          <span class="line"></span>
+        </div>
+        <section class="second-container">
+          <h3>Полный спектр ритуальных услуг: похороны и кремация "под ключ"</h3>
+          <br>
+          <p>
+            В трудную минуту берегите себя от недобросовестных лиц:
+          </p>
+          <ul class="list">
+            <li class="text">
+              <strong>Отклоняйте навязчивые предложения</strong>
+              незнакомцев, особенно с подозрительно низкими ценами.</li>
+            <li class="text">
+              <strong>Игнорируйте звонки</strong>
+              с незнакомых номеров от лже-представителей госорганов или страховых.</li>
+            <li class="text">
+              <strong>Не допускайте в дом</strong>
+              непрошеных «сотрудников». Проверяйте удостоверения!</li>
+            <li class="text">
+              <strong>Не передавайте документы</strong>
+              без заключенного договора и доверенности. Вникайте в условия!</li>
+              <button class="btn">Оставить заявку</button>
+          </ul>
+        </section>
+      </div>
     </main>
     <footer id="footer">
       <div class="footer-container">
@@ -103,5 +266,6 @@
       </div>
     </footer>
     <script src="/scripts/scripts.js"></script>
+    <script type="module" src="/scripts/cart-sidebar.js"></script>
 </body>
 </html>

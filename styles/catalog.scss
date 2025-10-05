@@ -8,6 +8,10 @@
     .main-title{
         text-align: center;
         margin: 7rem 0 3rem 0;
+
+        h1 {
+          font-size: 2.5rem;
+        }
     }
 
     //cross
@@ -219,7 +223,9 @@
     .third-container {
         margin-top: 2rem;
         font-size: 1.4rem;
-
+        width: 90%;
+        margin: auto;
+        
         h3 {
           text-align: center;
         }
@@ -256,7 +262,7 @@
             }
           }
         }
-    }    
+    }
 }
 
 /*адаптив*/
